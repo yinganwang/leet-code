@@ -1,13 +1,11 @@
-public class Solution {
-    public int maxProfit(int prices[]) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprofit = 0;
+class Solution {
+    public int maxProfit(int[] prices) {
+        int min_val = Integer.MAX_VALUE;
+        int max_profit = 0;
         for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < minprice)
-                minprice = prices[i];
-            else if (prices[i] - minprice > maxprofit)
-                maxprofit = prices[i] - minprice;
+            if (prices[i] < min_val) min_val = prices[i];
+            if (prices[i] - min_val > max_profit) max_profit = prices[i] - min_val;
         }
-        return maxprofit;
+        return max_profit;
     }
 }
